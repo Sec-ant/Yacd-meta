@@ -81,7 +81,9 @@ function useConnection(apiConfig) {
     [setState]
   );
   useEffect(() => {
-    return connAPI.fetchData(apiConfig, read);
+    return connAPI.fetchData(apiConfig, read, () => {
+      /* void */
+    });
   }, [apiConfig, read]);
   return state;
 }
